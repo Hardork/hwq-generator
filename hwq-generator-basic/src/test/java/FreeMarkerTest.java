@@ -20,11 +20,14 @@ import java.util.Map;
 public class FreeMarkerTest {
     @Test
     public void testFreeMarker() throws IOException, TemplateException {
+        // 设置
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_32);
         configuration.setDirectoryForTemplateLoading(new File("src/main/resources/templates"));
         configuration.setDefaultEncoding("utf-8");
 
+        // 读取模板
         Template template = configuration.getTemplate("myweb.html.ftl");
+        // 生成模型
         HashMap<String, Object> dataMap = new HashMap<>();
         dataMap.put("user", "hwq");
         List<Map<String, Object>> menuItems = new ArrayList<>();
@@ -40,6 +43,7 @@ public class FreeMarkerTest {
         dataMap.put("menuItems", menuItems);
         dataMap.put("currentYear", 2023);
 
+        // 生成文件
         Writer out = new FileWriter("myweb.html");
         template.process(dataMap, out);
         // 关闭文件流
