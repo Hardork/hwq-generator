@@ -44,4 +44,23 @@ public class DynamicGenerator {
         // 关闭文件流
         out.close();
     }
+
+    public static void Generate(Object model) throws IOException, TemplateException {
+        // 设置
+        String inputPath = new File("hwq-generator-basic" + File.separator + "src/main/resources/templates/MainTemplate.java.ftl").getPath();
+        String outputPath = new File("hwq-generator-basic" + File.separator + "MainTemplate.java").getPath();
+        // 设置
+        Configuration configuration = new Configuration(Configuration.VERSION_2_3_32);
+        File inputFile = new File(inputPath);
+        configuration.setDirectoryForTemplateLoading(inputFile.getParentFile());
+        configuration.setDefaultEncoding("utf-8");
+        // 读取模板
+        Template template = configuration.getTemplate(inputFile.getName());
+
+        // 生成文件
+        Writer out = new FileWriter(outputPath);
+        template.process(model, out);
+        // 关闭文件流
+        out.close();
+    }
 }
