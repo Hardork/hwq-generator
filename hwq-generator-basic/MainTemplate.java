@@ -3,7 +3,7 @@ package com.yupi.acm;
 import java.util.Scanner;
 
 /**
- * ä½œè€… hwq
+ * ×÷Õß hwq666
  */
 public class MainTemplate {
     public static void main(String[] args) {
@@ -11,23 +11,23 @@ public class MainTemplate {
 
         while (scanner.hasNext()) {
 
-            // è¯»å–è¾“å…¥å…ƒç´ ä¸ªæ•°
+            // ¶ÁÈ¡ÊäÈëÔªËØ¸öÊı
             int n = scanner.nextInt();
 
-            // è¯»å–æ•°ç»„
+            // ¶ÁÈ¡Êı×é
             int[] arr = new int[n];
             for (int i = 0; i < n; i++) {
                 arr[i] = scanner.nextInt();
             }
 
-            // å¤„ç†é—®é¢˜é€»è¾‘ï¼Œæ ¹æ®éœ€è¦è¿›è¡Œè¾“å‡º
-            // ç¤ºä¾‹ï¼šè®¡ç®—æ•°ç»„å…ƒç´ çš„å’Œ
+            // ´¦ÀíÎÊÌâÂß¼­£¬¸ù¾İĞèÒª½øĞĞÊä³ö
+            // Ê¾Àı£º¼ÆËãÊı×éÔªËØµÄºÍ
             int sum = 0;
             for (int num : arr) {
                 sum += num;
             }
 
-            System.out.println("è¾“å‡ºç»“æœ: " + sum);
+            System.out.println("yes: " + sum);
     }
 
         scanner.close();

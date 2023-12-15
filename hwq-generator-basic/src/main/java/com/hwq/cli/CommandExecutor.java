@@ -1,6 +1,8 @@
 package com.hwq.cli;
 
+import com.hwq.cli.command.ConfigCommand;
 import com.hwq.cli.command.GenerateCommand;
+import com.hwq.cli.command.ListCommand;
 import com.hwq.cli.example.Example;
 import picocli.CommandLine;
 
@@ -10,20 +12,23 @@ public class CommandExecutor implements Runnable {
     private final CommandLine commandLine;
 
     {
-        commandLine = new CommandLine(this).addSubcommand(new GenerateCommand());
+        // 添加命令
+        commandLine = new CommandLine(this)
+                .addSubcommand(new GenerateCommand())
+                .addSubcommand(new ListCommand())
+                .addSubcommand(new ConfigCommand())
+        ;
     }
 
     /**
      * 实现集体的业务,按下回车后会执行
      */
     public void run() {
+        System.out.println("请输入具体命令，或输入 --help 查看命令提示");
     }
 
-    public static void main(String[] args) {
-        // By implementing Runnable or Callable, parsing, error handling and handling user
-        // requests for usage help or version help can be done with one line of code.
-
-        int exitCode = new CommandLine(new Example()).execute(args);
-        System.exit(exitCode);
+    public Integer doExecutor(String[] args) {
+        return commandLine.execute(args);
     }
+
 }

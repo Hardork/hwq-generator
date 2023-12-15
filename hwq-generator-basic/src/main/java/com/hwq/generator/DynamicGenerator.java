@@ -16,18 +16,7 @@ import java.io.Writer;
  * @Description: 动态生成
  **/
 public class DynamicGenerator {
-    public static void main(String[] args) throws IOException, TemplateException {
-        // 设置
-        String inputPath = new File("hwq-generator-basic" + File.separator + "src/main/resources/templates/MainTemplate.java.ftl").getPath();
-        String outputPath = new File("hwq-generator-basic" + File.separator + "MainTemplate.java").getPath();
-//
-        // 生成模型
-        MainTemplateConfig mainTemplateConfig = new MainTemplateConfig();
-        mainTemplateConfig.setLoop(true);
-        mainTemplateConfig.setAuthor("hwq");
-        mainTemplateConfig.setOutputText("输出结果");
-        doGenerate(inputPath, outputPath, mainTemplateConfig);
-    }
+
 
     public static void doGenerate(String inputPath, String outputPath, Object model) throws IOException, TemplateException {
         // 设置
@@ -47,8 +36,9 @@ public class DynamicGenerator {
 
     public static void Generate(Object model) throws IOException, TemplateException {
         // 设置
-        String inputPath = new File("hwq-generator-basic" + File.separator + "src/main/resources/templates/MainTemplate.java.ftl").getPath();
-        String outputPath = new File("hwq-generator-basic" + File.separator + "MainTemplate.java").getPath();
+        String projectPath = System.getProperty("user.dir");
+        String inputPath = new File(projectPath + File.separator + "src/main/resources/templates/MainTemplate.java.ftl").getPath();
+        String outputPath = new File(projectPath + File.separator + "MainTemplate.java").getPath();
         // 设置
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_32);
         File inputFile = new File(inputPath);

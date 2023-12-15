@@ -13,7 +13,7 @@ public class StaticGenerator {
     public static void main(String[] args) {
         String projectPath = System.getProperty("user.dir");
         File parentFile = new File(projectPath).getParentFile(); // 存放目录
-        String inputPath = new File(projectPath, "hwq-generator-demo-projects/acm-template").getAbsolutePath();
+        String inputPath = new File(projectPath, "hwq-generator.bat-demo-projects/acm-template").getAbsolutePath();
         String outputPath = projectPath;
         copyFilesByHuTool(inputPath, outputPath);
         System.out.println(projectPath);
