@@ -8,7 +8,7 @@ public class JarGenerator {
     public static void doGenerate(String projectDir) throws IOException, InterruptedException {
         // 清理之前的构建并打包
         // 注意不同操作系统，执行的命令不同
-        String winMavenCommand = "mvn.cmd clean package -DskipTests=true";
+        String winMavenCommand = "mvn.cmd clean package -e -DskipTests=true";
         String otherMavenCommand = "mvn clean package -DskipTests=true";
         String mavenCommand = winMavenCommand;
 

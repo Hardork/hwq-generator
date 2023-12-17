@@ -52,7 +52,7 @@ public class Meta {
             private String fieldName;
             private String type;
             private String description;
-            private Boolean defaultValue;
+            private Object defaultValue;
             private String abbr;
         }
     }

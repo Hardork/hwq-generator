@@ -62,13 +62,12 @@
                 <version>3.3.0</version>
 
                 <configuration>
-
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>${basePackage}.Main</mainClass> <!-- 替换为你的主类的完整类名 -->
+                            <mainClass>${basePackage}.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
