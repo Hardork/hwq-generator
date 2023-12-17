@@ -6,8 +6,9 @@
   "author": "hwq",
   "createTime": "2023-11-22",
   "fileConfig": {
-    "inputRootPath": "E:/springboot-project/hwq-generator/hwq-generator/hwq-generator-demo-projects/acm-template-pro",
+    "inputRootPath": ".source/acm-template-pro",
     "outputRootPath": "generated",
+    "SourceRootPath": "E:/springboot-project/hwq-generator/hwq-generator/hwq-generator-demo-projects/acm-template-pro",
     "type": "dir",
     "files": [
       {
